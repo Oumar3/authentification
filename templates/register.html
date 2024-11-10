@@ -1,0 +1,33 @@
+{% extends "index.html" %}
+
+{% block content %}
+<main class="container">
+  <center>
+    <form method='POST' action="{% url "register" %}">
+      {% csrf_token %}
+      <h1 class="h3 mb-3 fw-normal">Connexion</h1>
+      <div class="form-floating w-50 py-2">
+        <input type="text" class="form-control" name="nom" id="nom" placeholder="oumar">
+        <label for="nom">Nom</label>
+      </div>
+      <div class="form-floating w-50 py-2">
+        <input type="text" name="prenom" class="form-control" id="prenom" placeholder="ali tori">
+        <label for="prenom">Prenom</label>
+      </div>
+      <div class="form-floating w-50 py-2">
+        <input type="email" name="email" class="form-control" id="email" placeholder="exemple@gmail.com">
+        <label for="email">Email</label>
+      </div>
+      <div class="form-floating w-50 py-2">
+        <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password">
+        <label for="floatingPassword">Password</label>
+      </div>
+      <div class="form-floating w-50 py-2">
+        <input type="password" name="password1" class="form-control" id="password1" placeholder="Password">
+        <label for="password1">Confirmation</label>
+      </div>
+      <button class="btn btn-primary w-50  py-2" type="submit">Register</button>
+    </form>
+  </center>
+</main>
+{% endblock content %}
