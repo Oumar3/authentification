@@ -8,6 +8,15 @@ from django.core.mail import send_mail
 
 # Create your models here.
 
+class CountryVisit(models.Model):
+    country = models.CharField(max_length=100)
+    visits = models.PositiveIntegerField(default=0)
+
+    def __str__(self):
+        return f"{self.country}: {self.visits} visites"
+
+
+
 class CustomeUser(AbstractBaseUser, PermissionsMixin):
     """
     An abstract base class implementing a fully featured User model with
